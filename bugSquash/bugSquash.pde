@@ -5,7 +5,7 @@ String naam = "Sjakie";
 /*
  Bovenaan het programma staan "variabelen". Een variabele wordt gebruikt om iets in te onthouden, bijvoorbeeld
  de snelheid en een naam. De oranje woordjes vóór de variabele geven aan wat voor soort gegevens er onthouden moet worden,
- hier een int (een heel getal) en een String (een tekst). Verander de waarde van de variabelen!
+ hier een int (een heel getal) en een String (een tekst). 
 
  Verder bestaat ieder Processing-programma in ieder geval uit de "methoden" setup() en draw(). Dat zie je hieronder. 
  Het groene woordje void hoort niet bij de naam van de methode en spreken we niet uit. De haakjes achter de naam 
@@ -18,8 +18,9 @@ String naam = "Sjakie";
 
 // methoden:
 void setup() { 
-  fullScreen(); // de groene opdracht is een ingebouwde methode, die maakt het programma fullscreen.
-  bugSquashSetup(); // dit is een zelfgemaakte methode, de inhoud daarvan vind je op het tabblad "basis".
+  fullScreen(); // de groene opdracht is een ingebouwde methode, die maakt het programma fullscreen
+  bugSquashSetup(); // dit is een zelfgemaakte methode, de inhoud daarvan vind je op het tabblad "basis"
+  println(naam); // met deze methode kun je iets laten zien in de console, de zwarte balk onderaan (leuk en handig, maar het komt niet in beeld in het uiteindelijke spel)
 }
 
 

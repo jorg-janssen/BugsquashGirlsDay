@@ -41,7 +41,6 @@ boolean getStartSchermRunning() {
 }
 
 String fixNaam(String naam) {
-  println(naam.substring(naam.length()-1));
   if (naam.substring(naam.length()-1).equals("s")) {
     naam = naam + "'";
   }
