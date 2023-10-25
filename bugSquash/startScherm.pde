@@ -3,35 +3,35 @@
 */
 
 // variabelen:
-boolean startSchermRunning = false;
+boolean startSchermRunning = false; // hiermee kunnen we aangeven of dit scherm klaar is (false) of nog actief is (true) - in startSchermSetup() wordt deze dan ook op true gezet!
 int[] startKnop = new int[4];
-PImage plaatje; 
+int[] plaatje = new int[3]; // insect-plaatje voor startscherm
 
 // methoden:
 void startSchermSetup() {
-  startSchermRunning = true;
-  startKnop = maakKnop(width/2-200, height-400, 400, 100); 
-  plaatje = loadImage("bugright.png");
+  startSchermRunning = true; // vanaf nu is speelScherm actief
+  startKnop = maakKnop(width/2-200, height-400, 400, 100); // aanmaken van startknop
+  plaatje = maakInsect(MARGE);
+  plaatje[0] = width/2-75;
+  plaatje[1] = 550;
+  plaatje[2] = 0;
 }
 
-void startSchermDraw(String naam) {
+void startSchermDraw(String naam) { // hier wordt alles van startScherm getekend (25 keer per seconde, dus steeds opnieuw ja)
   background(255);
-  tekenKnop(startKnop, "Start");  
   fill(0);
   textSize(50);
   textAlign(CENTER, TOP);
   text(fixNaam(naam) + " Bugsquash", width/2, 300);
   text("Snelheid: " + snelheid, width/2, 400);
-  image(plaatje, width/2-75, 600, 150, 150);
   textSize(30); 
-  text("Plet zo veel mogelijk bugs in 10 seconden", width/2, 800);
-}
-
-void startSchermMouseClicked() {
+  text("Plet zo veel mogelijk bugs in 10 seconden", width/2, 500);
+  tekenInsect(plaatje);
+  tekenKnop(startKnop, "Start");    
 }
 
 void startSchermMousePressed() {
-  if (gekliktOpKnop(startKnop)) {
+  if (gekliktOpKnop(startKnop) == true) {
     startSchermRunning = false;
   }
 }

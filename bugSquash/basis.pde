@@ -1,5 +1,6 @@
 /*
- Hier vind je de basisonderdelen van het spel. Het bestaat uit drie schermen, die na elkaar getoond worden.
+ Hier vind je de basisonderdelen van het spel. Het bestaat uit drie schermen, die na elkaar getoond worden:
+ startScherm, speelScherm en eindScherm.
 */
 
 // variabelen:
@@ -11,31 +12,31 @@ void bugSquashSetup(){
   startSchermSetup(); // hier wordt de methode startSchermSetup() aangeroepen. De inhoud vind je op de tab startScherm.
 }
 
-void bugSquashDraw(int snelheid, String naam){
-  switch(actieveScherm) {
-    case (1): 
+void bugSquashDraw(int snelheid, String naam){ // de bij de aanroep doorgegeven parameters worden ontvangen in nieuwe tijdelijke variabelen
+  switch(actieveScherm) {  // hier wordt het juiste van de drie schermen uitgevoerd.
+    case(1): // scherm 1 (startScherm)
     {
-      startSchermDraw(naam);
-      if (!getStartSchermRunning()) {  // als startScherm NIET! meer running
-        actieveScherm = 2;
-        speelSchermSetup();
+      startSchermDraw(naam); // voer scherm 1 uit, naam wordt doorgegeven
+      if (!getStartSchermRunning()) {  // ALS startScherm NIET! meer draait (na druk op startknop)
+        actieveScherm = 2; // dan moeten we naar scherm 2 (speelScherm)
+        speelSchermSetup(); // eerst alles van speelScherm klaarzetten
       }
       break;
     }
-    case (2): 
+    case(2): // scherm 2 (speelScherm)
     {
-      speelSchermDraw(snelheid);
-      if (!getSpeelSchermRunning()) {
+      speelSchermDraw(snelheid); // voer nu scherm 2 uit
+      if (!getSpeelSchermRunning()) { // ALS speelScherm niet meer draait (als timer voorbij is)
         actieveScherm = 3;
         eindSchermSetup();
       }
       break;
     }
-    case (3): 
+    case(3): // scherm 3 (eindScherm)
     {
       eindSchermDraw();
-      if (!getEindSchermRunning()) {
-        actieveScherm = 1;
+      if (!getEindSchermRunning()) { // (na druk op opnieuw-knop)
+        actieveScherm = 1; // terug naar speelScherm
         startSchermSetup();
       }
       break;
@@ -44,18 +45,18 @@ void bugSquashDraw(int snelheid, String naam){
 }
 
 void bugSquashMousePressed() {
-    switch(actieveScherm) {
-    case (1) :
+    switch(actieveScherm) {  // afhankelijk van in welk scherm we zitten, wordt er verschillend gereageerd op een muisklik
+    case(1) :
     {
       startSchermMousePressed();
       break;
     }
-    case (2) :
+    case(2) :
     {
       speelSchermMousePressed();
       break;
     }
-    case (3) :
+    case(3) :
     {
       eindSchermMousePressed();
       break;

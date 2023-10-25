@@ -19,7 +19,7 @@ void eindSchermDraw() {
 
 void eindSchermMousePressed() {
   if (gekliktOpKnop(opnieuwKnop)) {
-    snelheid = snelheid + 1;
+    snelheid = snelheid + 1;  // na dit level wordt de snelheid verhoogd
     eindSchermRunning = false;
   }
 }

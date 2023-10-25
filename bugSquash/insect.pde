@@ -1,9 +1,11 @@
 final int INSECTBREEDTE = 150;
 final int INSECTHOOGTE = 150;
+PImage insectNaarBoven;
 PImage insectNaarRechts;
 PImage insectNaarLinks;
 
 int[] maakInsect(int marge) {  
+  insectNaarBoven = loadImage("bugup.png");
   insectNaarRechts = loadImage("bugright.png");
   insectNaarLinks = loadImage("bugleft.png");
   int xPos = int(random(marge, width-marge));
@@ -14,11 +16,20 @@ int[] maakInsect(int marge) {
   return insect;
 }
 
-void tekenInsect(int[] insect) {
-  if (insect[2] == 1) {
-    image(insectNaarRechts, insect[0], insect[1], INSECTBREEDTE, INSECTHOOGTE);
-  } else {
-    image(insectNaarLinks, insect[0], insect[1], INSECTBREEDTE, INSECTHOOGTE);
+void tekenInsect(int[] insect) { // insect[2] bevat de richting: 0 is naar boven, 1 is naar rechts, -1 is naar links
+  switch(insect[2]) {
+    case(0): {
+      image(insectNaarBoven, insect[0], insect[1], INSECTBREEDTE, INSECTHOOGTE);  
+      break;
+    }
+    case(1): {
+      image(insectNaarRechts, insect[0], insect[1], INSECTBREEDTE, INSECTHOOGTE);
+      break;
+    } 
+    case(-1): {
+      image(insectNaarLinks, insect[0], insect[1], INSECTBREEDTE, INSECTHOOGTE);
+      break;
+    }
   }
 }
 
