@@ -54,14 +54,14 @@ int getScore() {
   return score;
 }
 
-void tekenScore(int score){
-  fill(0, 0, 255); // fill() gebruikt RGB (rood, groen, blauw) als parameters met waarden tussen 0 en 255
-  textAlign(LEFT, TOP);
-  text(score, 20, 50);
-}
-
 void tekenTijd(String tijd) {
-  fill(0); // fill() kan ook met één parameter, als je R en B en G alledrie dezelfde waarde wil geven
+  fill(0, 0, 255);  // fill() gebruikt RGB (rood, groen, blauw) als parameters met waarden tussen 0 en 255
   textAlign(RIGHT, TOP);
   text(tijd, width-20, 50);
+}
+
+void tekenScore(int score){
+  fill(0); // fill() kan ook met één parameter, als je R en B en G alledrie dezelfde waarde wil geven
+  textAlign(LEFT, TOP);
+  text(score, 20, 50);
 }

@@ -5,16 +5,11 @@
 // variabelen:
 boolean startSchermRunning = false; // hiermee kunnen we aangeven of dit scherm klaar is (false) of nog actief is (true) - in startSchermSetup() wordt deze dan ook op true gezet!
 int[] startKnop = new int[4];
-int[] plaatje = new int[3]; // insect-plaatje voor startscherm
 
 // methoden:
 void startSchermSetup() {
   startSchermRunning = true; // vanaf nu is speelScherm actief
   startKnop = maakKnop(width/2-200, height-400, 400, 100); // aanmaken van startknop
-  plaatje = maakInsect(MARGE);
-  plaatje[0] = width/2-75;
-  plaatje[1] = 550;
-  plaatje[2] = 0;
 }
 
 void startSchermDraw(String naam) { // hier wordt alles van startScherm getekend (25 keer per seconde, dus steeds opnieuw ja)
@@ -26,7 +21,6 @@ void startSchermDraw(String naam) { // hier wordt alles van startScherm getekend
   text("Snelheid: " + snelheid, width/2, 400);
   textSize(30); 
   text("Plet zo veel mogelijk bugs in 10 seconden", width/2, 500);
-  tekenInsect(plaatje);
   tekenKnop(startKnop, "Start");    
 }
 

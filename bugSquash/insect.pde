@@ -5,9 +5,8 @@ PImage insectNaarRechts;
 PImage insectNaarLinks;
 
 int[] maakInsect(int marge) {  
-  insectNaarBoven = loadImage("bugup.png");
-  insectNaarRechts = loadImage("bugright.png");
-  insectNaarLinks = loadImage("bugleft.png");
+  insectNaarRechts = loadImage("bugRight.png");
+  insectNaarLinks = loadImage("bugLeft.png");
   int xPos = int(random(marge, width-marge));
   int yPos = int(random(marge, height-marge-INSECTHOOGTE));   
   int richting = -1;

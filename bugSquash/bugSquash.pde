@@ -7,7 +7,7 @@ String naam = "Sjakie";
  onthouden dat later toegepast kan worden, bijvoorbeeld  de snelheid en een naam. De oranje
  woordjes vóór de variabele geven aan wat voor soort gegevens er onthouden moet worden,
  hier een int (een heel getal) en een String (een tekst). 
-
+ 
  Verder bestaat ieder Processing-programma in ieder geval uit de "methoden" setup() en draw(). 
  Dat zie je hieronder. In zo'n methode, tussen { en }, staan de opdrachten die het programma moet
  uitvoeren, steeds afgesloten met ; 
