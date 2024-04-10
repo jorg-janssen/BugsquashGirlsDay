@@ -4,9 +4,13 @@ PImage insectNaarBoven;
 PImage insectNaarRechts;
 PImage insectNaarLinks;
 
+
 int[] maakInsect(int marge) {  
-  insectNaarRechts = loadImage("bugRight.png");
-  insectNaarLinks = loadImage("bugLeft.png");
+  
+  insectNaarRechts = loadImage("images/bugRight.png");  // <--- Opdracht 2a. Verander bugRight.png in de naam van jouw plaatje!
+  insectNaarLinks = loadImage("images/bugLeft.png");    // <---           b. Verander bugLeft.png in de naam van jouw plaatje!
+  
+  
   int xPos = int(random(marge, width-marge));
   int yPos = int(random(marge, height-marge-INSECTHOOGTE));   
   int richting = -1;
@@ -14,6 +18,7 @@ int[] maakInsect(int marge) {
   int[] insect = {xPos, yPos, richting};
   return insect;
 }
+
 
 void tekenInsect(int[] insect) { // insect[2] bevat de richting: 0 is naar boven, 1 is naar rechts, -1 is naar links
   switch(insect[2]) {

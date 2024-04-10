@@ -21,7 +21,7 @@ void speelSchermDraw(int snelheid) {
   background(255);
   tekenLogo();
   tekenTijd(secondenOver(timer));
-                                 // <--- voeg hier de aanroep van de methode tekenScore() toe, met score als parameter
+  tekenScore(score);
   
   // Om het insect te laten lopen, moet zijn x-positie steeds veranderen. De x-positie zit in insect[0].
   // De richting zit in insect[2] en is -1 of 1.
@@ -30,7 +30,7 @@ void speelSchermDraw(int snelheid) {
   tekenInsect(insect);  
 
   if (isEindtijdBereikt(timer)) {
-    speelSchermRunning = false;
+    //speelSchermRunning = false;
   }  
   
   if (insectOpRand(insect)) { // niet geklikt op insect voordat het de rand bereikt
@@ -55,7 +55,7 @@ int getScore() {
 }
 
 void tekenTijd(String tijd) {
-  fill(0, 0, 255);  // fill() gebruikt RGB (rood, groen, blauw) als parameters met waarden tussen 0 en 255
+  fill(0);  // fill() gebruikt RGB (rood, groen, blauw) als parameters met waarden tussen 0 en 255
   textAlign(RIGHT, TOP);
   text(tijd, width-20, 50);
 }

@@ -1,6 +1,11 @@
+
 // variabelen:
 int snelheid = 1;
-String naam = "Sjakie";
+String naam = "Sjakie";  // <--- Opdracht 1: Verander Sjakie in jouw naam (of jullie namen)!
+
+
+
+
 
 /*
  Bovenaan in het programma staan "variabelen". Een variabele wordt gebruikt om iets te 
